@@ -1,0 +1,89 @@
+using System;
+namespace StudentAdmissionManagement 
+{ public class Student 
+{ 
+// Public Data Members public int Gr o; public int Admission o; public string Course; public int 
+Semester; public double Fees; // Private Data Member private string  ame; 
+// Scholarship Details public bool IsScholarshipEligible; public const double ScholarshipRate = 0.10; public double FinalFees; 
+// Default Constructor public 
+Student() 
+{ 
+Console.WriteĮine("======================================="); 
+Console.WriteĮine(" Student Admission Management System"); 
+Console.WriteĮine("=======================================\n"); 
+} 
+// Method to Accept Student Details public void 
+GetData() 
+{ 
+	Console.Write("Enter GR  o 	: "); 
+Gr o = Convert.ToInt32(Console.ReadĮine()); 
+	Console.Write("Enter  ame 	: "); 
+ ame =  Console.ReadĮine(); 
+	Console.Write("Enter Admission  o 	: "); 
+Admission o = Convert.ToInt32(Console.ReadĮine()); 
+	Console.Write("Enter Course 	: "); 
+Course = Console.ReadĮine(); Console.Write("Enter 
+	Semester 	: "); 
+Semester = Convert.ToInt32(Console.ReadĮine()); 
+	Console.Write("Enter Admission Fees 	 	 	: "); 
+Fees = Convert.ToDouble(Console.ReadĮine()); 
+} 
+// Method to Display Student Details public void DisplayData() 
+{ 
+Console.WriteĮine("\n======================================="); 
+Console.WriteĮine(" Student Details"); 
+Console.WriteĮine("======================================="); 
+ 
+ 
+Console.WriteĮine($"  ame 
+Console.WriteĮine($"GR  o 
+Console.WriteĮine($"Admission  o 
+Console.WriteĮine($"Course 
+Console.WriteĮine($"Semester 	: {  ame}"); 
+: {Gr  o}"); 
+: {Admission o}"); 
+: {Course}"); 
+: {Semester}"); 
+	Console.WriteĮine($"Admission Fees 	: {Fees}"); 
+if (Fees <= 50000) 
+{ 
+ 
+ 
+IsScholarshipEligible = true; 
+ 
+ 	FinalFees = Fees - (Fees * ScholarshipRate); 
+ 	 
+	} 	 
+ else  
+ 
+{ 
+ 	 
+ 	IsScholarshipEligible = false; FinalFees 
+ 
+= Fees; 
+ 
+} 
+ 
+ 
+Console.WriteĮine($"Scholarship Eligible : {(IsScholarshipEligible ? "Yes" : " 
+ 	 o")}"); 
+ 	 
+	Console.WriteĮine($"Final  Fees 	: {FinalFees}"); 
+ 
+} 
+} 
+} 
+Source: Program.cs Code: 
+using System; namespace StudentAdmissionManagement 
+{ internal class Program 
+{ static void Main(string[] args) 
+{ 
+Student student = new Student(); 
+ 
+ 
+student.GetData(); 
+student.DisplayData(); Console.WriteĮine("\nPress any key to exit..."); Console.ReadKey(); 
+} 
+} 
+} 
+ 
