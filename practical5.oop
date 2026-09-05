@@ -1,0 +1,103 @@
+Source: Default.cs
+<%@ Page Language="C#" AutoEventWireup="true"
+CodeBehind="Default.aspx.cs"
+Inherits="Prac5.Default" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Academic Calendar</title>
+</head>
+<body>
+<form id="form1" runat="server">
+<h1>Academic Calendar</h1>
+<asp:Calendar ID="Calendar1" runat="server"
+OnSelectionChanged="Calendar1_SelectionChanged">
+</asp:Calendar>
+<br />
+<asp:Label ID="lblDate" runat="server">
+</asp:Label>
+<br /><br />
+<asp:Button ID="btnLeave" runat="server"
+Text="Apply for Leave"
+OnClick="btnLeave_Click" />
+</form>
+</body>
+</html>
+Source: Leave.cs
+<%@ Page Language="C#" AutoEventWireup="true"
+CodeBehind="Leave.aspx.cs"
+Inherits="Prac5.Leave" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Leave Application</title>
+</head>
+<body>
+<form id="form1" runat="server">
+<h1>Leave Application</h1>
+<table>
+<tr>
+<td>Employee Name:</td>
+<td>
+<asp:TextBox ID="txtEmployeeName" runat="server">
+</asp:TextBox>
+</td>
+</tr>
+<tr>
+<td>Leave Date:</td>
+<td>
+<asp:TextBox ID="txtLeaveDate" runat="server"
+ReadOnly="true">
+</asp:TextBox>
+</td>
+</tr>
+<tr>
+<td>Leave Type:</td>
+<td>
+<asp:DropDownList ID="ddlLeaveType" runat="server">
+<asp:ListItem Text="Personal Leave"
+Value="Personal Leave" />
+<asp:ListItem Text="Medical Leave"
+Value="Medical Leave" />
+<asp:ListItem Text="Casual Leave"
+Value="Casual Leave" />
+</asp:DropDownList>
+</td>
+</tr>
+<tr>
+<td>Reason:</td>
+<td>
+<asp:TextBox ID="txtReason" runat="server"
+TextMode="MultiLine"
+Rows="5"
+Columns="40">
+</asp:TextBox>
+</td>
+</tr>
+<tr>
+<td>Replacement:</td>
+<td>
+<asp:DropDownList
+ID="replacement" runat="server">
+<asp:ListItem Text="Ayush" />
+<asp:ListItem Text="Ankit" />
+<asp:ListItem Text="Rahul" />
+</asp:DropDownList>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<asp:Button ID="btnSubmit" runat="server"
+Text="Submit Leave"
+OnClick="btnSubmit_Click" />
+</td>
+</tr>
+</table>
+<br />
+<asp:Label
+ID="lblMessage" runat="server">
+</asp:Label>
+</form>
+</body>
+</html>
